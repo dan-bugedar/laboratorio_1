@@ -9,6 +9,6 @@ def limpiar_ventas(df: pd.DataFrame) -> pd.DataFrame:
     return df[df['monto'] > 0]
 
 
-def total_por_producto(df: pd.DataFrame) -> pd.DataFrame:  
+def total_por_producto(df: pd.DataFrame) -> pd.DataFrame:
     return (df.groupby('producto', as_index=False)['monto']
               .sum().rename(columns={'monto': 'total'}))
